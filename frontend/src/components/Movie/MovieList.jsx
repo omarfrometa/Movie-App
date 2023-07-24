@@ -11,6 +11,7 @@ export const MovieList = ({ searchData }) => {
                     searchData.map(movie => (
                         <MovieCard
                             key={movie.imdbID}
+                            Id={movie.imdbID}
                             Title={movie.Title}
                             Type={movie.Type}
                             Year={movie.Year}

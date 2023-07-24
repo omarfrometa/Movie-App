@@ -4,10 +4,10 @@ import { useFetch } from "../hooks"
 
 
 export const MoviePage = () => {
-  const { title } = useParams()
-  const { data, isLoading } = useFetch(`https://www.omdbapi.com/?apikey=337f4251&t=${title}`)
+  const { id } = useParams()
+  const { data, isLoading } = useFetch(`https://www.omdbapi.com/?apikey=337f4251&i=${id}`)
 
-  const { Title, Year, Rated, Release, Genre, Poster, Actors } = !!data && data
+  const { Title, Year, Rated, Genre, Poster, Director, Actors, Released, imdbRating } = !!data && data
   return (
     <>
       <Navbar />
@@ -21,11 +21,13 @@ export const MoviePage = () => {
                 <img src={Poster} alt="" style={{ width: 200 }} />
                 <div className="col-md-6 col-lg-8 col-12">
                   <h2>{Title}</h2>
-                  <p>{Actors}</p>
-                  <p>{Year}</p>
-                  <p>{Rated}</p>
-                  <p>{Release}</p>
-                  <p>{Genre}</p>
+                  <p>Actors: {Actors}</p>
+                  <p>Director: {Director}</p>
+                  <p>Year: {Year}</p>
+                  <p>Rated: {Rated}</p>
+                  <p>Rating: {imdbRating}</p>
+                  <p>Genre: {Genre}</p>
+                  <p>Released: {Released}</p>
                 </div>
               </div>
             </div>

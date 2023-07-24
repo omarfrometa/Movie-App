@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
 
-export const MovieCard = ({ Title, Type, Year, Poster }) => {
+export const MovieCard = ({ Id, Title, Type, Year, Poster }) => {
     return (
-        <Link to={`/movie/${Title}`}>
+        <Link to={`/movie/${Id}`}>
 
             <div className="container" >
                 <div className="row justify-content-center gx-4 shadow-lg p-3 mb-5 bg-body-tertiary rounded">

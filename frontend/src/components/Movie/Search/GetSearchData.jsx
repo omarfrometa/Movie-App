@@ -8,12 +8,18 @@ import { PaginationComponent } from "../../UI/PaginationComponent"
 
 export const GetSearchData = () => {
   const [currentPage, setCurrentPage] = useState(1)
+
   const { search } = useContext(SearchContext)
+
   const { data, isLoading } = useFetch(`https://www.omdbapi.com/?apikey=337f4251&s=${search}&page=${currentPage}`)
 
   const dataSortByYear = data?.Search.sort((a, b) => {
     return b.Year - a.Year;
   });
+
+  if (!search) {
+    return <p>Please enter a search query.</p>
+  }
 
   return (
     <>

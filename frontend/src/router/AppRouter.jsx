@@ -6,7 +6,7 @@ export const AppRouter = () => {
     return (
         <Routes>
             <Route path="/search" element={<SearchPage />} />
-            <Route path="/movie/:title" element={<MoviePage />} />
+            <Route path="/movie/:id" element={<MoviePage />} />
 
             <Route path="/*" element={<Navigate to='/search' />} />
         </Routes>
